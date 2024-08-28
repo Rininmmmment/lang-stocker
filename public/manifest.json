@@ -1,0 +1,45 @@
+{
+  "name": "Lang Stocker",
+  "description": "Chrome Extension boilerplate created with React Typescript.",
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "identity"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "oauth2": {
+    "client_id": "101004150992-kagesgbt1eqnnn5rqpbr7noj8rl95mqm.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmd6vixqIXlLl4jLrNCqphjZcrMtU26xC5Pks3QmT7WsEM+RA3J9rctLPTGCK/6l2Y8smy+/mx8jfrDWeme8nif+GLd2GZMlQPRj+8f0hU4/St9/MmS5t7r3nOvhIJD7YucHo1jtXxaoFCDW2JnEeZ8jiNHmJfJ3CXDMGc+OKbthGmxmIYuDlTr7IYVx6C2hHHcYvouJnRe69/lpHM7nep8cd4+MrAOf4CBrp9XjYyL0/l3599Yhepx2uLCxVMhyMq1tfyWsbx9s/ruCaiyn/kMpEc9FTOS4TI09xG4cqNbhyNqAsiFNth+d7Arg2cBwPCdxMbBEkiv/4+5m6D+9TGQIDAQAB"
+}
